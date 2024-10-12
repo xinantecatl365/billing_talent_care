@@ -1,0 +1,41 @@
+<button routerLink="/home">Return</button>
+<div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <h2>Submit Your Details</h2>
+
+        <div>
+            <label for="amount">Amount:</label>
+            <input id="amount" formControlName="amount" type="number" />
+            <div *ngIf="myForm.get('amount')?.invalid && myForm.get('amount')?.touched" class="error-message">
+                Amount is required and must be a positive number.
+            </div>
+        </div>
+
+        <div>
+            <label for="date">Date:</label>
+            <input id="date" formControlName="date" type="date" />
+            <div *ngIf="myForm.get('date')?.invalid && myForm.get('date')?.touched" class="error-message">
+                Date is required.
+            </div>
+        </div>
+
+        <div>
+            <label for="details">Details:</label>
+            <textarea id="details" formControlName="details"></textarea>
+            <div *ngIf="myForm.get('details')?.invalid && myForm.get('details')?.touched" class="error-message">
+                Details are required.
+            </div>
+        </div>
+
+        <div>
+            <label for="clientId">Client ID:</label>
+            <input id="clientId" formControlName="clientId" type="number" />
+            <div *ngIf="myForm.get('clientId')?.invalid && myForm.get('clientId')?.touched" class="error-message">
+                Client ID is required and must be a positive number.
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="myForm.invalid">Submit</button>
+    </form>
+
+</div>

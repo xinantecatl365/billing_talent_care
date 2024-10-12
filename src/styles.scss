@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+
+// Variables para colores y fuentes
+$primary-color: #000000;
+$secondary-color: #f44336;
+$edit-color: #FFC107;
+$save-color: #49815f; // Amarillo para el botón de Editar
+$font-color: #333;
+$background-color: #5a5d63;
+$button-hover-color: darken($primary-color, 10%);
+$button-hover-danger-color: darken($secondary-color, 10%);
+$button-hover-edit-color: darken($edit-color, 10%); 
+$button-hover-save-color: darken($save-color, 10%); // Efecto hover para el botón de Editar
+$font-family: 'Roboto', sans-serif; // Fuente personalizada
+
+// Aplicar la fuente globalmente
+body {
+  font-family: $font-family;
+  color: $font-color;
+
+
+  .btnSave {
+    background-color: $save-color;
+    color: white;
+
+    &:hover {
+      background-color: $button-hover-edit-color;
+    }
+  }
+}
+
+// Contenedor principal
+ul {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    background-color: $background-color;
+    margin-bottom: 10px;
+    padding: 20px; // Más espacio para que se vea como tarjeta
+    border-radius: 10px; // Bordes redondeados para que parezca una tarjeta
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); // Sombra más pronunciada para el efecto de tarjeta
+    
+    div {
+      margin-bottom: 10px;
+
+      strong {
+        color: $primary-color;
+      }
+    }
+
+    // Estilos generales para los botones (más pequeños)
+    .btnDel, .btnEdit {
+      padding: 8px 12px; // Reducir el tamaño de los botones
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: $font-family; // Aplicar la fuente a los botones
+      font-size: 0.9rem; // Reducir el tamaño de fuente de los botones
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $button-hover-color;
+      }
+    }
+
+    // Botón para eliminar (rojo)
+    .btnDel {
+      background-color: $secondary-color;
+      color: white;
+
+      &:hover {
+        background-color: $button-hover-danger-color;
+      }
+    }
+
+    // Botón para editar (amarillo)
+    .btnEdit {
+      background-color: $edit-color;
+      color: white;
+
+      &:hover {
+        background-color: $button-hover-edit-color;
+      }
+    }
+  }
+}
+
+// Títulos
+h2 {
+  color: $primary-color;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: $font-family; // Aplicar la fuente a los títulos
+}
+
+// Botón de volver
+button {
+  background-color: $primary-color;
+  color: white;
+  padding: 8px 10px; // Reducir el tamaño del botón
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem; // Reducir el tamaño de la fuente del botón
+  font-family: $font-family; // Aplicar la fuente al botón
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}

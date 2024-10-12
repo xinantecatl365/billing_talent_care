@@ -1,0 +1,21 @@
+<button routerLink="/home">Return</button>
+
+<ul>
+    <li *ngFor="let bill of bills">
+    <div>
+        <strong>Details: </strong> {{bill.details}}
+        </div>
+        <div>
+            <strong>Amount: </strong> {{bill.amount}}
+        </div>
+        <div>
+            <strong>Date: </strong> {{bill.date}}
+        </div>
+        <button class="btnDel" (click)="deleteBill(bill)">
+            Eliminar
+        </button>
+        <button class="btnEdit" (click)="updateBill(bill)">
+            Editar
+        </button>
+    </li>
+</ul>
